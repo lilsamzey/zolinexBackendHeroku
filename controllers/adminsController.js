@@ -51,6 +51,23 @@ exports.getAllAdmins = async (req, res) => {
 
 
 
+  exports.updateAdmin= async (req, res) => {
+    try {
+      const id = req.params.id;
+      const admin = req.body;
+     
+      await adminsModel.updateAdmin(id, admin);
+     
+      res.status(200).json({ message: 'Admin updated successfully' });
+    } catch (error) {
+      console.log('error')
+      res.status(500).json({ error: error.message });
+    }
+  };
+
+
+
+
 
   exports.deleteAdmin = async (req, res) => {
     try {
@@ -96,3 +113,17 @@ exports.getAllAdminSettingsInfo = async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   };
+  
+  
+  
+
+exports.getAdminDetailsByAdminId = async (req, res) => {
+  try {
+    
+    const adminId=req.params.adminId;
+    const adminDetails = await adminsModel.getAdminDetailsByAdminId(adminId);
+    res.status(200).json(adminDetails);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
