@@ -195,3 +195,12 @@ exports.addAssignedTeacher = async (req, res) => {
 
 
   
+
+  exports.CourseStudentCounts = async (req, res) => {
+    try {
+      const coursestudentcounts = await coursesModel.CourseStudentCounts();
+      res.status(200).json(coursestudentcounts);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  };

@@ -9,6 +9,11 @@ const studentAttendanceController = require('../controllers/studentAttendanceCon
 
 
 
+
+router.get('/coursestudentcounts', coursesController.CourseStudentCounts);
+
+
+
 router.get('/', coursesController.getAllCourses);
 router.get('/:id', coursesController.getCourseById);
 router.post('/', coursesController.addCourse);

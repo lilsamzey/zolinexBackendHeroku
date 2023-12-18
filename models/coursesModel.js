@@ -229,3 +229,15 @@ exports.getFileCountByCourseId = async (id) => {
     res.status(500).json({ error: 'An error occurred while fetching the course' });
   }
 };
+
+
+
+exports.CourseStudentCounts = async () => {
+  try {
+    const pool = await new sql.connect(config);
+    const result = await pool.request().query('SELECT * FROM CourseStatistics order by courseId desc');
+    return result.recordset;
+  } catch (error) {
+    throw new Error('An error occurred while fetching CourseStudentCounts');
+  }
+};
