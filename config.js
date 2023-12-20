@@ -97,20 +97,16 @@
 
 
 
-
-
-
-
- //Amazon AWS FREE Tier example
+ //HETZNER SQL
 
  const sql = require('mssql');
 
  async function connectToDatabase() {
    try {
      const config = {
-       user: 'admin',
-       password: 'Klmn-32553255',
-       server: 'awssqlserver.ccrtpn4jk1n3.eu-central-1.rds.amazonaws.com',
+       user: 'sa',
+       password: 'Sami-32553255',
+       server: '167.235.134.170',
        database: 'coursemanagementsystem',
        options: {
           encrypt: true,
@@ -141,6 +137,53 @@
 
  // Fonksiyonu çağırarak veritabanına bağlanın
  connectToDatabase();
+
+
+
+
+
+
+
+ //Amazon AWS FREE Tier example
+
+ //const sql = require('mssql');
+
+ //async function connectToDatabase() {
+  //                                try {
+     //                                const config = {
+        //                               user: 'admin',
+            //                           password: 'Klmn-32553255',
+           //                            server: 'awssqlserver.ccrtpn4jk1n3.eu-central-1.rds.amazonaws.com',
+            //                           database: 'coursemanagementsystem',
+            //                           options: {
+            //                               encrypt: true,
+            //                               trustServerCertificate: true,
+             //                          }
+             //                        };
+// 
+   //                                  const pool = await sql.connect(config); // Bağlantıyı 'pool' değişkenine atayın
+// 
+   //                                  console.log('Connected to the AWS database successfully!');
+// 
+   //                                  // Keep alive database
+      //                               setInterval(async () => {
+         //                              try {
+            //                             const result = await pool.request().query('SELECT 1');
+              //                           console.log('Keep-alive is successful.');
+                //                       } catch (error) {
+                  //                       console.error('Keep-alive error:', error);
+                    //                   }
+                      //               }, 5 * 60 * 1000);  // 5 dakika
+
+                                    // Bağlantıyı kapatmak için gerekirse kullanabilirsiniz
+                                    // sql.close();
+                        //           } catch (err) {
+                         //            console.error('Error connecting to the database:', err.message);
+                         //          }
+                          //       }
+
+                                // Fonksiyonu çağırarak veritabanına bağlanın
+                       //          connectToDatabase();
 
 
 
